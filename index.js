@@ -9,7 +9,7 @@ import {NotificationBackground} from 'react-native-pitel-voip';
 
 const options = {
   ios: {
-    appName: 'app_name',
+    appName: `${APP_NAME}`,
   },
   android: {
     alertTitle: 'Permissions required',
@@ -17,7 +17,7 @@ const options = {
     cancelButton: 'Cancel',
     okButton: 'ok',
     foregroundService: {
-      channelId: 'com.pitel.pitelconnect',
+      channelId: `${PACKAGE_ID}`,
       channelName: 'Foreground service for my app',
       notificationTitle: 'My app is running on background',
       notificationIcon: 'Path to the resource icon of the notification',

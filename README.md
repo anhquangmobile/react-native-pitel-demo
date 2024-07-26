@@ -29,21 +29,40 @@ const appId = `${BUNDLE_ID}`;
 const domainUrl = `${DOMAIN}`;
 ...
 const sdkOptionsInit = {
-    sipDomain: `${DOMAIN}:${PORT}`,
+    sipDomain: `${DOMAIN}`,
+    port: `${PORT}`,
+    extension: ext,
     wssServer: `${WSS_URL}`,
     sipPassword: sipPass,
     bundleId: appId, // Bundle id for IOS
     packageId: appId, // Package id for Android
-    teamId: `${TEAM_ID}`, // Team id of Apple developer account
+    teamId: `${TEAM_ID}`,
   };
 ```
 
-- In file `src/screens/home_screen/home_screen` please enter the information.
+- In file `src/screens/home_screen/home_screen.js` please enter the information.
 
 ```js
 const ext = `${EXTENSION}`;
 const phone = `${CALL_OUT_PHONE_NUMBER}`;
 const iosAppName = `${IOS_APP_NAME}`;
+```
+
+- In file `index.js` please enter the information.
+
+```js
+const options = {
+  ios: {
+    appName: `${APP_NAME}`,
+  },
+  android: {
+    ...
+    foregroundService: {
+      channelId: `${PACKAGE_ID}`,
+      ...
+    },
+  },
+};
 ```
 
 # Run source code
